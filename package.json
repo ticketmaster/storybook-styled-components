@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@storybook/addons": "^3.2.14",
+    "react": "^16.0.0",
     "styled-components": "^2.2.3"
   }
 }
