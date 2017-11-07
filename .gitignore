@@ -1,0 +1,8 @@
+# IDE cruft
+.idea
+.DS_Store
+
+# npm bundles
+node_modules
+npm-debug.*
+coverage
