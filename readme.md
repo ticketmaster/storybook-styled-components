@@ -35,8 +35,9 @@ const themes = {
 const decorator = storybookStyledComponents(themes)
 
 addDecorator(decorator)
-
 // done!
 ```
 
 #### This is still a Work In Progress ... Feedback welcomed
+
+# [Read The License](./license.md)
