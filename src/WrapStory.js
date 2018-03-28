@@ -1,8 +1,6 @@
-import React from 'react'
-import addons from '@storybook/addons'
-import { ThemeProvider } from 'styled-components'
+import React from 'react';
 
-class StyledComponentsThemePicker extends React.Component {
+export default class WrapStyledComponentsThemePicker extends React.Component {
 
   constructor(props) {
     super(props)
@@ -37,19 +35,4 @@ class StyledComponentsThemePicker extends React.Component {
     ? <ThemeProvider theme={themes[theme]}>{this.props.children}</ThemeProvider>
     : this.props.children
   }
-}
-
-const wrapperTheme = (themes) => {
-  const channel = addons.getChannel();
-  return (storyFn, context) => (
-    <StyledComponentsThemePicker
-      themes={themes}
-      channel={channel}
-      >{storyFn(context)}
-    </StyledComponentsThemePicker>
-  );
-}
-
-export function withThemes(themes, defaultTheme) {
-  return (storyFn, context) => wrapperTheme(themes, defaultTheme)(storyFn, context)
 }
