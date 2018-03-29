@@ -1,6 +1,5 @@
 import React from 'react'
 import addons from '@storybook/addons'
-import { ThemeProvider } from 'styled-components'
 import WrapStyledComponentsThemePicker from './WrapStory'
 
 const wrapperTheme = (themes) => {

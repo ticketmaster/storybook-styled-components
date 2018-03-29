@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components'
 
 export default class WrapStyledComponentsThemePicker extends React.Component {
 
