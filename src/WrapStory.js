@@ -21,13 +21,13 @@ export default class WrapStyledComponentsThemePicker extends React.Component {
   }
 
   componentWithReceiveProps(props) {
-    console.log('componentWithReceiveProps', props)
     this.setState(props)
   }
+
   updateState(theme) {
-    console.log('updateState', theme)
     this.setState({theme})
   }
+
   render() {
     const {themes, children} = this.props;
     const {theme} = this.state;
