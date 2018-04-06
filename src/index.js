@@ -1,18 +1,14 @@
 import React from 'react'
 import addons from '@storybook/addons'
-import WrapStyledComponentsThemePicker from './WrapStory'
+import WrapStory from './WrapStory'
 
-const wrapperTheme = (themes) => {
+export const withThemes = themes => (storyFn, context) => {
   const channel = addons.getChannel();
-  return (storyFn, context) => (
-    <WrapStyledComponentsThemePicker
+  return (
+    <WrapStory
       themes={themes}
       channel={channel}
       >{storyFn(context)}
-    </WrapStyledComponentsThemePicker>
-  );
-}
-
-export function withThemes(themes, defaultTheme) {
-  return (storyFn, context) => wrapperTheme(themes, defaultTheme)(storyFn, context)
+    </WrapStory>
+  )
 }

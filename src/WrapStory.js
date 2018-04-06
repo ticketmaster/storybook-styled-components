@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
 
-export default class WrapStyledComponentsThemePicker extends React.Component {
+export default class WrapStory extends React.Component {
 
   constructor(props) {
     super(props)
