@@ -2,15 +2,25 @@
   "name": "storybook-styled-components",
   "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dist/",
+    "prepublish": "npm run build"
   },
   "author": "Nicolo Taddei <nicolo.taddei@ticketmaster.co.uk>",
   "license": "ISC",
-  "dependencies": {
-    "@storybook/addons": "^3.2.14",
-    "react": "^16.0.0",
-    "styled-components": "^2.2.3"
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^3.3.0",
+    "react": "*",
+    "react-dom": "*",
+    "styled-components": "*"
   }
 }

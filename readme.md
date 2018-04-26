@@ -19,8 +19,8 @@ In your config.js, define your theme configuration and pass it in to the `addDec
 
 ```javascript
 // config.js
-import storybookStyledComponents from 'storybook-styled-components/decorator'
 import { configure, addDecorator } from '@storybook/react'
+import { withThemes } from 'storybook-styled-components'
 
 // then import your themes
 import firstTheme from './src/themes/first'
@@ -32,9 +32,7 @@ const themes = {
 }
 
 // now add the decorator
-const decorator = storybookStyledComponents(themes)
-
-addDecorator(decorator)
+addDecorator(withThemes(themes))
 // done!
 ```
 
