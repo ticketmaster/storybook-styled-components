@@ -16,8 +16,7 @@ export default class WrapStory extends React.Component {
 
   componentWillUnmount(){
     this.props.channel.removeListener('storybook-styled-components:init', this.props.themes)
-    this.props.channel.removeListener('storybook-styled-components:update', theme => this.setState({ theme }))
-
+    this.props.channel.removeListener('storybook-styled-components:update', this.updateState)
   }
 
   componentWithReceiveProps(props) {
