@@ -20,7 +20,7 @@ export default class WrapStory extends React.Component {
     this.props.channel.removeListener('storybook-styled-components:update', this.updateState)
   }
 
-  componentWithReceiveProps(props) {
+  componentWillReceiveProps(props) {
     this.setState(props)
   }
 
