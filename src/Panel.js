@@ -48,7 +48,7 @@ export default class Panel extends React.Component {
 
     return (
       <div>
-        <select value={this.state.theme} onChange={this.updateTheme}>
+        <select value={theme} onChange={this.updateTheme}>
           {Object.keys(themes).map(theme => (
             <option key={theme} value={theme}>{theme}</option>
           ))}

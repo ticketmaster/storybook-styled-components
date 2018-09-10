@@ -5,7 +5,8 @@ export default class WrapStory extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { theme: '' }
+    const keys = Object.keys(props.themes)
+    this.state = {theme: props.themes[keys[0]]}
     this.updateState = this.updateState.bind(this)
   }
 
@@ -14,7 +15,7 @@ export default class WrapStory extends React.Component {
     this.props.channel.on('storybook-styled-components:update', this.updateState)
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.channel.removeListener('storybook-styled-components:init', this.props.themes)
     this.props.channel.removeListener('storybook-styled-components:update', this.updateState)
   }
@@ -24,15 +25,13 @@ export default class WrapStory extends React.Component {
   }
 
   updateState(theme) {
-    this.setState({theme})
+    const {themes} = this.props
+    this.setState({theme: themes[theme]})
   }
 
   render() {
-    const {themes, children} = this.props;
-    const {theme} = this.state;
-
-    return themes[theme]
-    ? <ThemeProvider theme={themes[theme]}>{this.props.children}</ThemeProvider>
-    : this.props.children
+    const {children} = this.props
+    const {theme} = this.state
+    return theme ? <ThemeProvider theme={theme}>{children}</ThemeProvider> : children
   }
 }
