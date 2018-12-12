@@ -42,6 +42,8 @@ export default class Panel extends React.Component {
   }
 
   render() {
+    if(!this.props.active) return (null);
+
     const { theme, themes } = this.state
 
     if (!theme) return <div>Addon is initialising</div>
