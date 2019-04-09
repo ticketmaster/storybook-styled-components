@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ThemeProvider } from 'styled-components'
 
 export default class WrapStory extends React.Component {
@@ -30,8 +30,8 @@ export default class WrapStory extends React.Component {
   }
 
   render() {
-    const {children} = this.props
+    const {children, GlobalStyle} = this.props
     const {theme} = this.state
-    return theme ? <ThemeProvider theme={theme}>{children}</ThemeProvider> : children
+  return theme ? <ThemeProvider theme={theme}><Fragment>{children}{GlobalStyle && <GlobalStyle />}</Fragment></ThemeProvider> : children
   }
 }

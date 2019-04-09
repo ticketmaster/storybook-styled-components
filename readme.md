@@ -21,6 +21,7 @@ In your config.js, define your theme configuration and pass it in to the `addDec
 // config.js
 import { configure, addDecorator } from '@storybook/react'
 import { withThemes } from 'storybook-styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 // then import your themes
 import firstTheme from './src/themes/first'
@@ -31,8 +32,12 @@ const themes = {
   'Second Theme': secondTheme,
 }
 
+const GlobalStyle = createGlobalStyle`
+  font-size: 16px;
+`
+
 // now add the decorator
-addDecorator(withThemes(themes))
+addDecorator(withThemes(themes, GlobalStyle))
 // done!
 ```
 
