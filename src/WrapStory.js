@@ -1,12 +1,15 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
+import { getQueryParam } from '@storybook/client-api';
+
+const currentThemeValueFromUrl = getQueryParam('currentTheme');
 
 export default class WrapStory extends React.Component {
 
   constructor(props) {
     super(props)
     const keys = Object.keys(props.themes)
-    this.state = {theme: props.themes[keys[0]]}
+    this.state = {theme: props.themes[currentThemeValueFromUrl || keys[0]]}
     this.updateState = this.updateState.bind(this)
   }
 
